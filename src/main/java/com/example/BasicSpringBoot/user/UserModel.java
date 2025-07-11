@@ -1,11 +1,9 @@
 package com.example.BasicSpringBoot.user;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.Entity;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -17,8 +15,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 public class UserModel {
     @Id
-    @id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String username;

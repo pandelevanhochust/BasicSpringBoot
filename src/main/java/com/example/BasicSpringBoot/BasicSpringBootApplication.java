@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -20,11 +21,15 @@ public class BasicSpringBootApplication {
 		final var env = app.run(args).getEnvironment();
 		logApplicationStartup(env);
 
+		@RequestMapping("/")
+		public()
+
+
 	}
 
 	private static void logApplicationStartup(final Environment env) {
 		String protocol = "http";
-		String serverPort = "8000";
+		String serverPort = env.getProperty("server.port","8000");
 		String hostAddress = "localhost";
 
 		try {
