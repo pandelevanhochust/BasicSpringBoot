@@ -3,24 +3,25 @@ debug: true
 spring:
   application:
     name: springboot
-  server:
-    port: 8000
   jackson:
     property-naming-strategy: SNAKE_CASE
-  flyway:
-    locations: classpath:/db/migration
-    schemas: users
-    ignore-migration-patterns: true
-    validate-on-migrate: false
-    baseline-on-migrate: true
-    enabled: false
-  datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/spring?currentSchema=users
-    username: postgres
-    password: 12345
   jmx:
     enabled: false
   devtools:
     restart:
       enabled: false
+  flyway:
+    enabled: false
+    locations: classpath:/db/migration
+    schemas: users
+    ignore-migration-patterns: true
+    validate-on-migrate: false
+    baseline-on-migrate: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/spring?currentSchema=users
+    username: postgres
+    password: 12345
+
+server:
+  port: 8000

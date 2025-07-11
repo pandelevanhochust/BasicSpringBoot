@@ -20,11 +20,6 @@ public class BasicSpringBootApplication {
 		final var app = new SpringApplication(BasicSpringBootApplication.class);
 		final var env = app.run(args).getEnvironment();
 		logApplicationStartup(env);
-
-		@RequestMapping("/")
-		public()
-
-
 	}
 
 	private static void logApplicationStartup(final Environment env) {
